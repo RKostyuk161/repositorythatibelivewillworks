@@ -15,6 +15,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     
+    @IBOutlet weak var myOwnScroll: UIScrollView!
+    
     @IBOutlet weak var usersNumberOfLabels: UITextField!
     
     @IBAction func changeNumberOfLabels(_ sender: UITextField) {
@@ -38,14 +40,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadInfo()
+       //myOwnScroll.addSubview(myOwnStackView)
+       //loadInfo()
     }
     
     
     func configOfMyStackView() {
-        view.addSubview(myOwnStackView)
+        //view.addSubview(myOwnStackView)
         myOwnStackView.axis = .vertical
-        myOwnStackView.distribution  = .fillEqually
+        myOwnStackView.distribution  = .fill
         myOwnStackView.spacing = 10
     }
     
@@ -68,7 +71,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let myLabel = UILabel()
             configOfMyLabels(someLabel: myLabel)
             myLabel.text = "\(createArrayOfRandomCounts(myCountNumsOfArray: countNumsOfArray))"
-            myOwnStackView.addArrangedSubview(myLabel)
+            myOwnScroll.addSubview(myLabel)
             index -= 1
         }
     }
@@ -128,13 +131,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if numberOfLabels < 1 {
             return false
         } else {
-            if numberOfLabels > 10 {
+            if numberOfLabels > 100 {
                 return false
             } else {
                 if countNumsOfArray < 1 {
                     return false
                 } else {
-                    if countNumsOfArray > 14 {
+                    if countNumsOfArray > 140 {
                         return false
                     } else {
                         return true

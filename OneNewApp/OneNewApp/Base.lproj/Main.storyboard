@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,66 +17,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVT-dp-99z">
-                                <rect key="frame" x="84" y="832" width="246" height="30"/>
-                                <state key="normal" title="Сгенерировать с учетом констант"/>
-                                <connections>
-                                    <action selector="changeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="koX-rJ-EA9"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DvE-Qr-d8E">
-                                <rect key="frame" x="0.0" y="88" width="414" height="734"/>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="100" id="NFy-L9-U9c">
-                                <rect key="frame" x="0.0" y="44" width="414" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uVd-40-tpZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="65"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Количество строк" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bfA-px-gs9">
-                                        <rect key="frame" x="0.0" y="3.5" width="157" height="27"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        <connections>
-                                            <action selector="changeNumberOfLabels:" destination="BYZ-38-t0r" eventType="valueChanged" id="zoK-wa-dQK"/>
-                                            <action selector="userNumberOfLabels:" destination="BYZ-38-t0r" eventType="valueChanged" id="MzR-7Y-ckE"/>
-                                        </connections>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Размер массива" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fmv-NG-3w5">
-                                        <rect key="frame" x="257" y="3.5" width="157" height="27"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Hm-jb-T2g">
+                                        <rect key="frame" x="0.0" y="0.0" width="202" height="65"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="changeNumsOfArray:" destination="BYZ-38-t0r" eventType="valueChanged" id="znl-rs-dBa"/>
-                                            <action selector="userCountNumsOfArray:" destination="BYZ-38-t0r" eventType="valueChanged" id="01z-B1-kfF"/>
+                                            <action selector="changeNumberOfLabels:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Rjy-hN-7HA"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSL-LY-Yl1">
+                                        <rect key="frame" x="212" y="0.0" width="202" height="65"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="changeNumsOfArray:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="0pk-K2-iXb"/>
                                         </connections>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="D8v-0C-6fv"/>
+                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISP-Hj-DJT">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="zWx-82-Ham"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="changeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xTO-Kl-1X5"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUt-qI-iUZ">
+                                <rect key="frame" x="0.0" y="117" width="414" height="687"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FmU-nz-pB5">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FmU-nz-pB5" secondAttribute="trailing" id="0Yf-YS-fc3"/>
+                                    <constraint firstItem="FmU-nz-pB5" firstAttribute="centerY" secondItem="kUt-qI-iUZ" secondAttribute="centerY" id="2P0-9V-gA9"/>
+                                    <constraint firstItem="FmU-nz-pB5" firstAttribute="leading" secondItem="kUt-qI-iUZ" secondAttribute="leading" id="A02-hP-0Fe"/>
+                                    <constraint firstItem="FmU-nz-pB5" firstAttribute="top" secondItem="kUt-qI-iUZ" secondAttribute="top" id="DdN-Nu-eVT"/>
+                                    <constraint firstItem="FmU-nz-pB5" firstAttribute="centerX" secondItem="kUt-qI-iUZ" secondAttribute="centerX" id="G2j-Nb-zRh"/>
+                                    <constraint firstItem="FmU-nz-pB5" firstAttribute="width" secondItem="kUt-qI-iUZ" secondAttribute="width" id="P3Z-Cr-W9C"/>
+                                    <constraint firstAttribute="bottom" secondItem="FmU-nz-pB5" secondAttribute="bottom" id="Q5M-kh-G8M"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="vVT-dp-99z" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Cur-uz-ZEd"/>
-                            <constraint firstItem="vVT-dp-99z" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="DK7-U2-LGX"/>
-                            <constraint firstItem="DvE-Qr-d8E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ngg-CM-04f"/>
-                            <constraint firstItem="vVT-dp-99z" firstAttribute="top" relation="lessThanOrEqual" secondItem="DvE-Qr-d8E" secondAttribute="bottom" constant="10" id="RIn-53-KfQ"/>
-                            <constraint firstItem="NFy-L9-U9c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="VBo-BS-RND"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DvE-Qr-d8E" secondAttribute="trailing" id="Y4C-Zu-twu"/>
-                            <constraint firstItem="NFy-L9-U9c" firstAttribute="centerX" secondItem="DvE-Qr-d8E" secondAttribute="centerX" id="YSb-yc-HbK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NFy-L9-U9c" secondAttribute="trailing" id="aXV-vZ-sJl"/>
-                            <constraint firstItem="vVT-dp-99z" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fYV-8D-SJD"/>
-                            <constraint firstItem="DvE-Qr-d8E" firstAttribute="top" secondItem="NFy-L9-U9c" secondAttribute="bottom" constant="10" id="tgy-RL-Tuw"/>
-                            <constraint firstItem="NFy-L9-U9c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xpn-s7-LDQ"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uVd-40-tpZ" secondAttribute="trailing" id="94Q-Cg-aME"/>
+                            <constraint firstItem="uVd-40-tpZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PvO-uF-nb2"/>
+                            <constraint firstItem="kUt-qI-iUZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Scl-TM-EjM"/>
+                            <constraint firstItem="ISP-Hj-DJT" firstAttribute="top" secondItem="kUt-qI-iUZ" secondAttribute="bottom" constant="8" symbolic="YES" id="UG7-p4-UYt"/>
+                            <constraint firstItem="ISP-Hj-DJT" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hkl-J0-Kn2"/>
+                            <constraint firstItem="uVd-40-tpZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ins-vK-Hlv"/>
+                            <constraint firstItem="ISP-Hj-DJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nUg-4m-F44"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ISP-Hj-DJT" secondAttribute="trailing" id="noR-WR-rQX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kUt-qI-iUZ" secondAttribute="trailing" id="r83-Mm-Wjl"/>
+                            <constraint firstItem="kUt-qI-iUZ" firstAttribute="top" secondItem="uVd-40-tpZ" secondAttribute="bottom" constant="8" symbolic="YES" id="tDe-Rk-5W5"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="myOwnStackView" destination="DvE-Qr-d8E" id="hsA-sq-tcx"/>
-                        <outlet property="usersCountNumsOfArray" destination="fmv-NG-3w5" id="crK-dD-7jB"/>
-                        <outlet property="usersNumberOfLabels" destination="bfA-px-gs9" id="8RB-3l-eWy"/>
+                        <outlet property="myOwnScroll" destination="kUt-qI-iUZ" id="nGF-TQ-en0"/>
+                        <outlet property="myOwnStackView" destination="FmU-nz-pB5" id="NHT-hL-7xD"/>
+                        <outlet property="usersCountNumsOfArray" destination="bSL-LY-Yl1" id="M9G-M5-k8Y"/>
+                        <outlet property="usersNumberOfLabels" destination="6Hm-jb-T2g" id="LEZ-ul-1LE"/>
+                        <outlet property="view" destination="ISP-Hj-DJT" id="sr3-jG-hur"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="58"/>
+            <point key="canvasLocation" x="-188.40579710144928" y="69.642857142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
